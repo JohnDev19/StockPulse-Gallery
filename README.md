@@ -2,6 +2,8 @@
 
 This web application is part of a web development project to download a collection of stock photos and royalty-free images. The goal is to eventually implement a feature that allows users to upload and manage their own images from personal sources without relying on any external APIs.
 
+![Poster](assets/images/poster.jpg)
+
 ## Features
 
 - Search for images
