@@ -1,4 +1,4 @@
-const accessKey = 'YourAcessKeyHere'; // Visit [https://unsplash.com/developers] to get your own Acess Key.
+const accessKey = 'your_unsplash_access_key_here'; // Visit [https://unsplash.com/developers] to get your own Acess Key.
 const imagesPerPage = 12;
 let currentPage = 1;
 let currentQuery = '';
