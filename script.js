@@ -1,4 +1,4 @@
-const accessKey = 's37pupxYji4yXlyw3djWVrQZGhnvCx6KMcC_0p-TViA';
+const accessKey = 'YourAcessKeyHere'; // Visit [https://unsplash.com/developers] to get your own Acess Key.
 const imagesPerPage = 12;
 let currentPage = 1;
 let currentQuery = '';
