@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stock Pulse Gallery - Free high-resolution stock photos and royalty-free images shared by creators.">
+    <meta name="keywords" content="stock photos, free images, royalty-free images, photography, images, gallery">
+    <meta name="author" content="JohnDev19">
+    <meta property="og:title" content="Stock Pulse Gallery">
+    <meta property="og:description" content="Explore a vast collection of free high-resolution stock photos and royalty-free images.">
+    <meta property="og:image" content="assets/images/fotios-photos-3024995.jpg">
+    <meta property="og:url" content="https://websitemo.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stock Pulse Gallery">
+    <meta name="twitter:description" content="Explore a vast collection of free high-resolution stock photos and royalty-free images.">
+    <meta name="twitter:image" content="assets/images/camera-solid.svg">
+
+    <title>Stock Pulse Gallery</title>
+    <link rel="icon" href="assets/images/camera-solid.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Faculty+Glyphic&family=Marcellus&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><i class="fas fa-camera"></i> Stock Pulse</div>
+    </header>
+
+    <div class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Free high-resolution stock photos , royalty-free images shared by creators.</h1>
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        placeholder="Search for stunning images..."
+                        aria-label="Search images"
+                    >
+                    <button class="search-button">
+                        <i class="fas fa-search"></i>
+                        <span>Search</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="controls-container">
+            <div class="filters">
+                <div class="filter-section">
+                    <span class="filter-label">Orientation:</span>
+                    <button class="filter-button active" data-orientation="all">All</button>
+                    <button class="filter-button" data-orientation="landscape">Landscape</button>
+                    <button class="filter-button" data-orientation="portrait">Portrait</button>
+                    <button class="filter-button" data-orientation="squarish">Square</button>
+                </div>
+                <div class="custom-select-container">
+                  <div class="custom-select-trigger">
+                    <span class="selected-value">Relevance</span>
+                    </div>
+          <div class="custom-select-options">
+             <div class="custom-select-option selected" data-value="relevant">Relevance</div>
+            <div class="custom-select-option" data-value="latest">Latest</div>
+        <div class="custom-select-option" data-value="popular">Popular</div>
+    </div>
+</div>
+</div>
+  </div>
+
+      <div id="loading-indicator">
+            <div class="spinner"></div>
+        </div>
+    <div id="loading-indicator">
+            <div class="spinner"></div>
+        </div>
+
+     <div class="error-container" id="error-container">
+            <div class="error-message">No results found</div>
+            <svg class="error-illustration" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 9L9 15" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 9L15 15" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="error-description">Try adjusting your search terms or filters to find what you're looking for.</p>
+        </div>
+
+        <div class="gallery" id="image-gallery"></div>
+
+        <div class="pagination" id="pagination">
+            <button class="page-button" id="prev-button" disabled>
+                <i class="fas fa-chevron-left"></i> Previous
+            </button>
+            <span class="page-info">Page <span id="current-page">1</span> of <span id="total-pages">1</span></span>
+            <button class="page-button" id="next-button" disabled>
+                Next <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </main>
+
+<div id="image-modal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="image-container">
+            <img class="modal-image" src="" alt="Full size image">
+        </div>
+        <div class="modal-info">
+            <h2 class="modal-title"></h2>
+            <div class="modal-photographer">
+         <img class="photographer-image" src="" alt="Photographer" />
+          <span></span><span class="photographer-name"></span>
+         </div>
+            <div class="modal-stats">
+                <span class="likes-count"></span>
+                <button class="download-button">Download</button>
+            </div>
+            <div class="modal-description"></div>
+        </div>
+    </div>
+</div>
+
+    <div id="toast" class="toast"></div>
+    
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <div class="footer-logo">
+                <i class="fas fa-camera"></i> Stock Pulse
+            </div>
+            <div class="footer-description">
+                Over 5.1 million+ high quality stock images, videos and music shared by our talented community.
+            </div>
+            <div class="footer-social-icons">
+                <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        
+        <div class="footer-links">
+          <div class="footer-heading">Discover</div>
+            <a href="#" class="footer-link">Editor's Choice</a>
+            <a href="#" class="footer-link">Curated Collections</a>
+            <a href="#" class="footer-link">Pixabay Radio</a>
+            <a href="#" class="footer-link">Popular Images</a>
+            <a href="#" class="footer-link">Popular Videos</a>
+            <a href="#" class="footer-link">Popular Music</a>
+            <a href="#" class="footer-link">Popular Searches</a>
+        </div>
+
+        <div class="footer-section">
+            <div class="footer-heading">Community</div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Blog</a>
+                <a href="#" class="footer-link">Forum</a>
+                <a href="#" class="footer-link">Creators</a>
+                <a href="#" class="footer-link">Cameras</a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <div class="footer-heading">About</div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">About Us</a>
+                <a href="#" class="footer-link">FAQ</a>
+                <a href="#" class="footer-link">License Summary</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Cookies Policy</a>
+                <a href="#" class="footer-link">Digital Services Act</a>
+                <a href="#" class="footer-link">API</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-bottom-links">
+            <a href="#" class="footer-link">Report Content</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+            <a href="#" class="footer-link">Privacy Policy</a>
+        </div>
+        <div class="recaptcha-notice">
+            This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+        </div>
+    </div>
+</footer>
+
+ <script src="script.js"></script>
+</body>
+</html>
